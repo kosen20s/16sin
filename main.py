@@ -1,6 +1,6 @@
 import codecs
-import discod
-
+import discord
+import os
 client = discord.Client()
 
 @client.event
@@ -15,4 +15,9 @@ async def on_message(message):
         cc = await client.wait_for("message", check=check)
 
         a = cc.content
-        codecs.decode(b'{a}', 'hex_codec').decode('utf-8')
+        b = "codecs.decode(b'" + a + "', 'hex_cedec').decode('utf-8')"
+        c = codecs.decode(a, 'hex_codec').decode('utf-8').format(a=a)
+        print(c)
+        await message.channel.send(f"```{c}```")
+if __name__ == "__main__":
+    client.run(os.environ['SIN_TOKEN'])
