@@ -20,4 +20,4 @@ async def on_message(message):
         print(c)
         await message.channel.send(f"```{c}```")
 if __name__ == "__main__":
-    client.run(os.environ['SIN_TOKEN'])
+    client.run(os.environ['MARK1_TOKEN'])
